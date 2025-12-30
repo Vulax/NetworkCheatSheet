@@ -15,15 +15,6 @@ Sadrži osnovne komande, pregled interfejsa, routing, LAG, VLAN, ACL, BGP/OSPF i
 
 ---
 
-## Struktura projekta
-
-.
-├── index.html # Glavni cheat sheet sa komandama i alias-ima
-├── style.css # Stilovi za tooltip-e, dugmad i layout
-└── script.js # JS za prikaz vendor sekcija i copy-to-clipboard funkcionalnost
-
----
-
 ## Kako koristiti
 
 1. Otvori `index.html` u web browseru.  
