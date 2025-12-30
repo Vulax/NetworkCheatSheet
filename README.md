@@ -30,10 +30,10 @@ Tooltipi koriste CSS + opcionalni JS za praćenje kursora i ostanak unutar viewp
 
 Copy-to-clipboard dugmad koriste navigator.clipboard API.
 
-Responsive dizajn se postiže osnovnim CSS grid/flex podešavanjima.
+Responsive dizajn se postiže osnovnim CSS grid/flex podešavanjima.<br>
 
-Licence
+Licence <br>
 Ovaj projekat je open-source i može se koristiti slobodno za lične ili obrazovne svrhe.
 
-Autor
+Autor<br>
 Vukašin Todorović • 2025
