@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Network Device Cheat Sheet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Network Device Cheat Sheet</h1>
+    <p>Cisco • Juniper • MikroTik</p>
+  </header>
+
+  <nav>
+    <button onclick="showVendor('cisco')">Cisco</button>
+    <button onclick="showVendor('juniper')">Juniper</button>
+    <button onclick="showVendor('mikrotik')">MikroTik</button>
+  </nav>
+
+  <main>
+    <!-- CISCO -->
+    <section id="cisco" class="vendor">
+      <h2>🟦 Cisco (ASR9K / NX-OS)</h2>
+
+      <h3>Osnovno</h3>
+      <pre>
+<span class="tooltip">show version<span class="tooltiptext">Prikazuje verziju OS-a, uptime i model uređaja</span></span>
+<span class="tooltip">show inventory<span class="tooltiptext">Prikazuje sve module i serijske brojeve</span></span>
+<span class="tooltip">show hostname<span class="tooltiptext">Prikazuje ime uređaja</span></span>
+<span class="tooltip">show running-config<span class="tooltiptext">Trenutna konfiguracija u memoriji</span></span>
+<span class="tooltip">show startup-config<span class="tooltiptext">Konfiguracija koja se učitava pri boot-u</span></span>
+<span class="tooltip">show logging<span class="tooltiptext">Sistemski logovi</span></span>
+<span class="tooltip">show processes cpu<span class="tooltiptext">CPU usage po procesima</span></span>
+<span class="tooltip">show memory statistics<span class="tooltiptext">Statistika memorije</span></span>
+      </pre>
+
+      <h3>Interfejsi</h3>
+      <pre>
+<span class="tooltip">show interfaces brief<span class="tooltiptext">Krati pregled svih interfejsa i njihov status</span></span>
+<span class="tooltip">show interfaces description<span class="tooltiptext">Prikazuje opis portova</span></span>
+<span class="tooltip">show interface Ethernet1/1<span class="tooltiptext">Detaljan status određenog interfejsa</span></span>
+      </pre>
+
+      <h3>Port-Channel / Bundle</h3>
+      <pre>
+<span class="tooltip">show port-channel summary<span class="tooltiptext">Status svih port-channel-a</span></span>
+<span class="tooltip">show bundle brief<span class="tooltiptext">Krati pregled bundle-a</span></span>
+<span class="tooltip">show bundle members<span class="tooltiptext">Članovi određenog bundle-a</span></span>
+      </pre>
+
+      <h3>VLAN / STP</h3>
+      <pre>
+<span class="tooltip">show vlan brief<span class="tooltiptext">Pregled VLAN-ova i portova</span></span>
+<span class="tooltip">show spanning-tree<span class="tooltiptext">Status STP protokola</span></span>
+<span class="tooltip">show spanning-tree summary<span class="tooltiptext">Krati pregled STP topologije</span></span>
+      </pre>
+
+      <h3>IP / VRF / Routing</h3>
+      <pre>
+<span class="tooltip">show ip interface brief<span class="tooltiptext">Status IP adresa po interfejsima</span></span>
+<span class="tooltip">show vrf all<span class="tooltiptext">Prikaz svih VRF instanci</span></span>
+<span class="tooltip">show route<span class="tooltiptext">Routing tabela</span></span>
+<span class="tooltip">show bgp summary<span class="tooltiptext">Pregled BGP peer-ova</span></span>
+<span class="tooltip">show ip bgp neighbors<span class="tooltiptext">Detalji o BGP peer-ovima</span></span>
+<span class="tooltip">show ip ospf neighbor<span class="tooltiptext">OSPF peer status</span></span>
+<span class="tooltip">show ip route ospf<span class="tooltiptext">OSPF rute u routing tabeli</span></span>
+      </pre>
+
+      <h3>ACL / Security</h3>
+      <pre>
+<span class="tooltip">show access-lists<span class="tooltiptext">Pregled svih ACL-ova</span></span>
+<span class="tooltip">show run | include access-list<span class="tooltiptext">Prikaz ACL konfiguracija u running-config</span></span>
+      </pre>
+
+      <h3>CDP / LLDP</h3>
+      <pre>
+<span class="tooltip">show cdp neighbors detail<span class="tooltiptext">CDP susedi i detalji</span></span>
+<span class="tooltip">show lldp neighbors detail<span class="tooltiptext">LLDP susedi i detalji</span></span>
+      </pre>
+
+      <h3>💻 Cisco CLI Aliases</h3>
+      <button class="copy-btn" onclick="copyToClipboard('cisco-alias')">Copy Cisco Aliases</button>
+      <pre id="cisco-alias">
+alias exec sv show version
+alias exec si show inventory
+alias exec shn show hostname
+alias exec srb show running-config
+alias exec ssb show startup-config
+alias exec slog show logging
+alias exec spc show processes cpu
+alias exec smem show memory statistics
+
+alias exec sif show interfaces brief
+alias exec sid show interfaces description
+alias exec sie show interface Ethernet1/1
+
+alias exec spcsummary show port-channel summary
+alias exec sbbrief show bundle brief
+alias exec sbmembers show bundle members
+
+alias exec svlan show vlan brief
+alias exec sstp show spanning-tree
+alias exec sstpsummary show spanning-tree summary
+
+alias exec sipif show ip interface brief
+alias exec svrfs show vrf all
+alias exec sroute show route
+alias exec sbgp show bgp summary
+alias exec sbgpneigh show ip bgp neighbors
+alias exec sospf show ip ospf neighbor
+alias exec srouteospf show ip route ospf
+
+alias exec sacl show access-lists
+alias exec sruna show run | include access-list
+
+alias exec scdp show cdp neighbors detail
+alias exec slldp show lldp neighbors detail
+      </pre>
+    </section>
+
+    <!-- JUNIPER -->
+    <section id="juniper" class="vendor hidden">
+      <h2>🟨 Juniper (Junos)</h2>
+
+      <h3>Osnovno</h3>
+      <pre>
+<span class="tooltip">show version<span class="tooltiptext">Verzija Junos OS-a</span></span>
+<span class="tooltip">show chassis hardware<span class="tooltiptext">Hardver i serijski brojevi</span></span>
+<span class="tooltip">show configuration system host-name<span class="tooltiptext">Ime uređaja</span></span>
+<span class="tooltip">show system uptime<span class="tooltiptext">Koliko dugo uređaj radi</span></span>
+<span class="tooltip">show system processes extensive<span class="tooltiptext">Detalji o procesima i opterećenju</span></span>
+<span class="tooltip">show system storage<span class="tooltiptext">Informacije o disku</span></span>
+      </pre>
+
+      <h3>Interfejsi</h3>
+      <pre>
+<span class="tooltip">show interfaces terse<span class="tooltiptext">Krati pregled interfejsa i statusa</span></span>
+<span class="tooltip">show interfaces xe-0/0/0<span class="tooltiptext">Detaljan status određenog interfejsa</span></span>
+<span class="tooltip">show configuration interfaces xe-0/0/0<span class="tooltiptext">Konfiguracija određenog interfejsa</span></span>
+      </pre>
+
+      <h3>LAG (ae)</h3>
+      <pre>
+<span class="tooltip">show interfaces ae0<span class="tooltiptext">Status LAG interfejsa</span></span>
+<span class="tooltip">show configuration interfaces ae0<span class="tooltiptext">Konfiguracija LAG interfejsa</span></span>
+      </pre>
+
+      <h3>VLAN / STP</h3>
+      <pre>
+<span class="tooltip">show ethernet-switching vlan<span class="tooltiptext">VLAN-ovi i priključeni portovi</span></span>
+<span class="tooltip">show spanning-tree interface<span class="tooltiptext">STP status po interfejsima</span></span>
+      </pre>
+
+      <h3>Routing / VRF / BGP / OSPF</h3>
+      <pre>
+<span class="tooltip">show route<span class="tooltiptext">Routing tabela</span></span>
+<span class="tooltip">show route table all<span class="tooltiptext">Sve rute iz svih tabela</span></span>
+<span class="tooltip">show configuration routing-instances<span class="tooltiptext">VRF / routing instance konfiguracija</span></span>
+<span class="tooltip">show bgp summary<span class="tooltiptext">BGP peer status</span></span>
+<span class="tooltip">show ospf neighbor<span class="tooltiptext">OSPF peer status</span></span>
+      </pre>
+
+      <h3>Firewall / Security</h3>
+      <pre>
+<span class="tooltip">show security policies<span class="tooltiptext">Aktivne firewall politike</span></span>
+<span class="tooltip">show configuration security<span class="tooltiptext">Konfiguracija sigurnosnih pravila</span></span>
+      </pre>
+
+      <h3>LLDP</h3>
+      <pre>
+<span class="tooltip">show lldp neighbors detail<span class="tooltiptext">LLDP susedi i detalji</span></span>
+      </pre>
+
+      <h3>💻 Juniper CLI Aliases</h3>
+      <button class="copy-btn" onclick="copyToClipboard('juniper-alias')">Copy Juniper Aliases</button>
+      <pre id="juniper-alias">
+set cli alias sv show version
+set cli alias shhw show chassis hardware
+set cli alias shhn show configuration system host-name
+set cli alias sup show system uptime
+set cli alias spp show system processes extensive
+set cli alias sst show system storage
+
+set cli alias sif show interfaces terse
+set cli alias sie show interfaces xe-0/0/0
+set cli alias sic show configuration interfaces xe-0/0/0
+
+set cli alias sae show interfaces ae0
+set cli alias saec show configuration interfaces ae0
+
+set cli alias svlan show ethernet-switching vlan
+set cli alias sstp show spanning-tree interface
+
+set cli alias sroute show route
+set cli alias srouteall show route table all
+set cli alias srconf show configuration routing-instances
+set cli alias sbgp show bgp summary
+set cli alias sospf show ospf neighbor
+
+set cli alias sfpol show security policies
+set cli alias sfconf show configuration security
+
+set cli alias slldp show lldp neighbors detail
+      </pre>
+    </section>
+
+    <!-- MIKROTIK -->
+    <section id="mikrotik" class="vendor hidden">
+      <h2>🟥 MikroTik (RouterOS)</h2>
+
+      <h3>Osnovno</h3>
+      <pre>
+<span class="tooltip">/system resource print<span class="tooltiptext">CPU, RAM, uptime, temperatura</span></span>
+<span class="tooltip">/system identity print<span class="tooltiptext">Ime uređaja</span></span>
+<span class="tooltip">/system logging print<span class="tooltiptext">Sistem logovi</span></span>
+<span class="tooltip">/system health print<span class="tooltiptext">Status hardvera i health check</span></span>
+      </pre>
+
+      <h3>Interfejsi</h3>
+      <pre>
+<span class="tooltip">/interface print<span class="tooltiptext">Pregled svih interfejsa</span></span>
+<span class="tooltip">/interface ethernet print<span class="tooltiptext">Pregled Ethernet portova</span></span>
+<span class="tooltip">/interface ethernet monitor ether1<span class="tooltiptext">Real-time monitoring interfejsa</span></span>
+      </pre>
+
+      <h3>Neighbor Discovery</h3>
+      <pre>
+<span class="tooltip">/ip neighbor print<span class="tooltiptext">Pregled suseda (CDP/LLDP)</span></span>
+      </pre>
+
+      <h3>IP / Routing</h3>
+      <pre>
+<span class="tooltip">/ip address print<span class="tooltiptext">Sve IP adrese na uređaju</span></span>
+<span class="tooltip">/ip route print<span class="tooltiptext">Routing tabela</span></span>
+<span class="tooltip">/routing table print<span class="tooltiptext">Detaljna tabela rutiranja</span></span>
+<span class="tooltip">/routing bgp peer print<span class="tooltiptext">BGP peer status</span></span>
+<span class="tooltip">/routing ospf neighbor print<span class="tooltiptext">OSPF peer status</span></span>
+<span class="tooltip">/ip route print detail<span class="tooltiptext">Detaljne informacije o rutama</span></span>
+      </pre>
+
+      <h3>LAG / VLAN / Bridge</h3>
+      <pre>
+<span class="tooltip">/interface bonding print<span class="tooltiptext">Pregled LAG-a / bonding-a</span></span>
+<span class="tooltip">/interface vlan print<span class="tooltiptext">VLAN konfiguracija</span></span>
+<span class="tooltip">/interface bridge print<span class="tooltiptext">Pregled bridge interfejsa</span></span>
+<span class="tooltip">/interface bridge port print<span class="tooltiptext">Portovi unutar bridge-a</span></span>
+      </pre>
+
+      <h3>Firewall / NAT</h3>
+      <pre>
+<span class="tooltip">/ip firewall filter print<span class="tooltiptext">Pregled firewall filter pravila</span></span>
+<span class="tooltip">/ip firewall nat print<span class="tooltiptext">Pregled NAT pravila</span></span>
+      </pre>
+
+      <h3>💻 MikroTik CLI Aliases</h3>
+      <button class="copy-btn" onclick="copyToClipboard('mikrotik-alias')">Copy MikroTik Aliases</button>
+      <pre id="mikrotik-alias">
+/system script add name=sv source="/system resource print"
+/system script add name=shid source="/system identity print"
+/system script add name=slog source="/system logging print"
+/system script add name=shealth source="/system health print"
+
+! Interfejsi
+/system script add name=sif source="/interface print"
+/system script add name=sef source="/interface ethernet print"
+/system script add name=emon source="/interface ethernet monitor ether1"
+
+! Neighbor discovery
+/system script add name=sneigh source="/ip neighbor print"
+
+! IP / Routing
+/system script add name=sip source="/ip address print"
+/system script add name=sroute source="/ip route print"
+/system script add name=srtab source="/routing table print"
+/system script add name=sbgp source="/routing bgp peer print"
+/system script add name=sospf source="/routing ospf neighbor print"
+/system script add name=srouted source="/ip route print detail"
+
+! LAG / VLAN / Bridge
+/system script add name=sbond source="/interface bonding print"
+/system script add name=svlan source="/interface vlan print"
+/system script add name=sbridge source="/interface bridge print"
+/system script add name=sbport source="/interface bridge port print"
+
+! Firewall / NAT
+/system script add name=sfilter source="/ip firewall filter print"
+/system script add name=snat source="/ip firewall nat print"
+      </pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 • Network Cheat Sheet • GitHub Ready</p>
+  </footer>
+<script src="script.js"></script>
+
+</body>
+</html>

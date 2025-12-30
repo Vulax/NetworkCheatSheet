@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+header {
+  text-align: center;
+  padding: 1.5rem;
+  background: #020617;
+  border-bottom: 1px solid #1e293b;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #020617;
+}
+
+nav button {
+  background: #1e293b;
+  color: #e5e7eb;
+  border: 1px solid #334155;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+nav button:hover {
+  background: #334155;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.vendor {
+  margin-bottom: 3rem;
+}
+
+.hidden {
+  display: none;
+}
+
+h2 {
+  border-bottom: 2px solid #334155;
+  padding-bottom: 0.5rem;
+}
+
+h3 {
+  margin-top: 1.5rem;
+  color: #93c5fd;
+}
+
+pre {
+  background: #020617;
+  border: 1px solid #1e293b;
+  padding: 1rem;
+  overflow: hidden;
+  border-radius: 6px;
+  color: #e5e7eb;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid #1e293b;
+  background: #020617;
+  font-size: 0.9rem;
+}
+
+.tooltip {
+  position: relative;
+  cursor: help;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: left;
+  padding: 5px 8px;
+  border-radius: 4px;
+  position: fixed; /* FIXED umesto absolute */
+  z-index: 1000;
+  white-space: pre-wrap;
+  max-width: 300px;
+  overflow-wrap: break-word;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.copy-btn {
+  background-color: #007bff; /* plava boja */
+  color: white; 
+  border: none; 
+  padding: 8px 16px; 
+  margin: 8px 0; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.copy-btn:hover {
+  background-color: #0056b3; /* tamnija plava kad hover */
+  transform: scale(1.05);
+}
+
+.copy-btn:active {
+  background-color: #00408d; /* još tamnija plava kad klik */
+  transform: scale(0.95);
+}
